@@ -6,3 +6,4 @@ query dynamodb
 4). get_item.py -- get a specific item from dynamodb table --fractal_data_julia
 5). simulated_fractal_data.py -- create a dynamodb table with 10*100 records
 6). query_simulated.py --query record from dynamodby table --simulated_fractal_data for specific device and specific numbers 
+7). AWS code for command line.
