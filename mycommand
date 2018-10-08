@@ -1,0 +1,10 @@
+aws dynamodb put-item --table-name fractal_site_data --item file://myitem
+aws dynamodb describe-table --table-name fractal_site_data
+aws dynamodb get-item --table-name fractal_site_data --key file://mykey
+aws dynamodb create-table --generate-cli-skeleton
+aws dynamodb delete-item --table-name fractal_site_data --key file://mykey
+python simulated_fractal_data.py
+aws dynamodb query --table-name simulated_fractal_data --key-condition-expression "SN=:id" --expression-attribute-values file://key
+
+aws dynamodb query --table-name simulated_fractal_data --key-condition-expression "SN=:id AND TS BETWEEN :dat AND :dat2" --expression-attribute-values file://key1
+aws dynamodb query --table-name simulated_fractal_data --key-condition-expression "SN=:id" --expression-attribute-values file://key
